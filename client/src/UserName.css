@@ -1,0 +1,6 @@
+.UserName {
+  width: 200px;
+  margin-left: calc(25vw - 20px);
+  text-align: left;
+  padding: 10px;
+}

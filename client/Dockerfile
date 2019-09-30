@@ -7,11 +7,11 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
+RUN npm install create-react-app -g && npm install
 
 # Bundle app source
 COPY . .
 
-EXPOSE 3020
+EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+CMD [ "npm", "start" ]

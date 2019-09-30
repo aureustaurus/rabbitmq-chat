@@ -1,0 +1,10 @@
+.send-message-form > input {
+  height: 20px;
+  width: 50vw;
+}
+
+.message-label {
+  width: 150px;
+  margin-left: 25vw;
+  text-align: left;
+}

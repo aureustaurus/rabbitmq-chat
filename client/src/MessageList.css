@@ -1,0 +1,8 @@
+.message-list {
+  list-style-type: none;
+  border: 1px solid #b1acac;
+  width: 50vw;
+  margin: 20px auto;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}

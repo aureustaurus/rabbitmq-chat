@@ -1,1 +1,44 @@
 # docker-compose.yml
+version: "3"
+
+services:
+  rabbit:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbit
+    ports:
+    ports:
+      - 15672:15672
+      - 15671:15671
+      - 5672:5672
+    networks:
+      - net2
+
+  express:
+    build: ./server
+    command: node index.js
+    container_name: express
+    links:
+     - rabbit
+    ports:
+      - "3020:3020"
+    networks:
+      - net2
+    depends_on:
+      - rabbit
+
+  client:
+    build: ./client
+    command: node ./src/index.js
+    container_name: client
+    links:
+     - express
+    ports:
+      - "3000:3000"
+    networks:
+      - net2
+    depends_on:
+      - express
+
+networks:
+  net2:
+    driver: "bridge"

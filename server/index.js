@@ -32,6 +32,11 @@ app.put('/message', async function (req, res) {
   const rawMessage = req.body
   result = JSON.stringify(rawMessage)
   console.log('result', result)
+
+  // ERROR: in this place some error with rabbitmq connection
+  const rabbit = await sender();
+  console.log('rabbit', rabbit)
+
   // TODO: push messages from rabbitMQ
   res.send({message: result, save: 'ok'});
 });

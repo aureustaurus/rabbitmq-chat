@@ -28,7 +28,7 @@ services:
 
   client:
     build: ./client
-    command: node ./src/index.js
+    command: npm start
     container_name: client
     links:
      - express

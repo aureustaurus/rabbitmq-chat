@@ -3,7 +3,7 @@ var amqp = require("amqplib/callback_api");
 const sender = async () => {
   //amqp://localhost
   // const url = "amqp://guest:guest@localhost"
-  const url = encodeURIComponent("amqp://guest:guest@rabbitmq:5672")
+  const url = "amqp://guest:guest@rabbit:5672"
 //   {
 //     protocol: 'amqp', //amqp or amqps
 //     username: 'someone',
